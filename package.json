@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/awesome-people/aeon/issues"
   },
-  "homepage": "https://github.com/awesome-people/aeon#readme"
+  "homepage": "https://github.com/awesome-people/aeon#readme",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
 }
