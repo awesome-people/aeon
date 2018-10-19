@@ -23,7 +23,11 @@ drivers.mysql = {
 
 drivers.sqlite = {};
 
-drivers.mongodb = {};
+drivers.mongodb = {
+    host : process.env.DB_HOST ? process.env.DB_HOST : 'localhost',
+    port : process.env.DB_PORT ? process.env.DB_PORT : 27017,
+    database : process.env.DB_NAME
+};
 
 drivers.redis = {};
 

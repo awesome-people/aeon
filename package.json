@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/awesome-people/aeon#readme",
   "dependencies": {
+    "mongodb": "^3.1.8",
     "mysql": "^2.16.0"
   }
 }
