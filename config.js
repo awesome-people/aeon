@@ -42,10 +42,10 @@ const currentDriver = typeof(process.env.DB_DRIVER) === "string" ? process.env.D
 
 const exportDriver = typeof(drivers[currentDriver]) === "object" ? drivers[currentDriver] : drivers.mysql;
 
-/*Object.keys(exportDriver).forEach((prop) => {
+Object.keys(exportDriver).forEach((prop) => {
     if (typeof(exportDriver[prop]) === "undefined") {
         throw new Error('Database Driver Configuration Missing!');
     }
-});*/
+});
 
 module.exports = exportDriver;
