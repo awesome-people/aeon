@@ -10,3 +10,7 @@
  * 
  * Created By: Nitish Kumar on 10/19/2018 3:05 PM
  */
+
+const Model = require('./src/Model');
+
+module.exports = Model;

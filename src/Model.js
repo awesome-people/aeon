@@ -20,7 +20,7 @@ class Model {
         this.tableName = this.constructor.name.toString().toLowerCase() + 's';
         this.bindings = {
             'select' : [],
-            'from' : ['users'],
+            'from' : [this.tableName],
             'where' : {},
             'order' : [],
             'limit' : false,
