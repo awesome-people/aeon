@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/awesome-people/aeon.git"
+    "url": "git+https://github.com/elegans/aeon.git"
   },
   "keywords": [
     "js",
@@ -19,9 +19,9 @@
   "author": "Nitish Kumar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/awesome-people/aeon/issues"
+    "url": "https://github.com/elegans/aeon/issues"
   },
-  "homepage": "https://github.com/awesome-people/aeon#readme",
+  "homepage": "https://github.com/elegans/aeon#readme",
   "dependencies": {
     "mongodb": "^3.1.8",
     "mysql": "^2.16.0"
