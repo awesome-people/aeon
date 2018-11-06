@@ -83,6 +83,40 @@ class BluePrint {
         return this._addToStructure(name, BluePrint._generateFloatingTypeBlocks('DOUBLE', precision, scale));
     }
 
+    date(name) {
+        return this._addToStructure(name, {
+            type : 'DATE'
+        });
+    }
+
+    dateTime(name, fsp = 0) {
+        return this._addToStructure(name, {
+            type : 'DATETIME',
+            fsp : fsp
+        });
+    }
+
+    timeStamp(name, fsp = 0) {
+        return this._addToStructure(name, {
+            type : 'TIMESTAMP',
+            fsp : fsp
+        });
+    }
+
+    time(name, fsp = 0) {
+        return this._addToStructure(name, {
+            type : 'TIME',
+            fsp : fsp
+        });
+    }
+
+    year(name, format = 2) {
+        return this._addToStructure(name, {
+            type : 'YEAR',
+            format : format
+        })
+    }
+
     _addToStructure(columnName, options = undefined) {
         this.structure[columnName] = options;
         return this.structure;
