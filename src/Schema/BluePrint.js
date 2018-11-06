@@ -117,6 +117,8 @@ class BluePrint {
         })
     }
 
+    // @TODO : Add String Data Types
+
     _addToStructure(columnName, options = undefined) {
         this.structure[columnName] = options;
         return this.structure;
