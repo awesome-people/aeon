@@ -42,10 +42,7 @@ class BluePrint {
     }
 
     bit(name, length = 1, autoIncrement = false) {
-        return this._addToStructure(name, {
-            type : 'BIT',
-            length : length
-        });
+        return this._addToStructure(name, BluePrint._generateIntTypeBlocks('BIT', length, autoIncrement, false));
     }
 
     tinyInt(name, length = 1, autoIncrement = false, unsigned = false) {
@@ -144,9 +141,19 @@ class BluePrint {
         return this._addToStructure(name, BluePrint._generateCharacterTypeBlocks('LONGTEXT', false));
     }
 
+    increments(name) {
+        return this.integer(name, 4, true, true);
+    }
+
+    timestamps() {
+        this.timeStamp('created_at');
+        this.timeStamp('updated_at');
+    }
+
     _addToStructure(columnName, options = undefined) {
+
         this.structure[columnName] = options;
-        return this.structure;
+        return this.structure[columnName];
     }
 }
 

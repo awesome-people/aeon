@@ -11,6 +11,16 @@
  * Created By: Nitish Kumar on 6/11/18 10:44 AM
  */
 
-class Migrations {}
+const BluePrint = require('./../Schema/BluePrint');
 
-module.exports = Migrations
+class Migrations {
+    constructor() {
+        this.table = new BluePrint();
+    }
+
+    up() {}
+
+    down() {}
+}
+
+module.exports = Migrations;

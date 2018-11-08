@@ -11,6 +11,19 @@
  * Created By: Nitish Kumar on 10/19/2018 3:05 PM
  */
 
-const Model = require('./src/Model');
+// const Model = require('./src/Model');
+//
+// module.exports = Model;
 
-module.exports = Model;
+const Schema = require('./src/Schema');
+const bluePrint = require('./src/Schema/BluePrint');
+
+let table = new bluePrint();
+
+table.integer('id');
+table.double('price');
+table.string('jsondata');
+table.text('resultData');
+
+Schema.create('users', table.structure);
+

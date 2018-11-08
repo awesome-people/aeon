@@ -11,7 +11,7 @@
  * Created By: Nitish Kumar on 10/19/2018 10:23 PM
  */
 
-const Database = require('./DatabaseOps');
+const Database = require('./DatabaseReadOps');
 
 class Model extends Database
 {

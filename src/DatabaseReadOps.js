@@ -14,7 +14,7 @@
 const driver = require('./../config').driver;
 const query = require('./../lib/query');
 
-class DatabaseOps {
+class DatabaseReadOps {
     constructor(){
         this.connection = driver;
         this.primaryKey = 'id';
@@ -47,7 +47,7 @@ class DatabaseOps {
         for(let i in conditions) {
             let temp = i.split(' ');
             if (temp[1] !== undefined) {
-                if ((DatabaseOps._getOperators()).indexOf(temp[1]) === -1) {
+                if ((DatabaseReadOps._getOperators()).indexOf(temp[1]) === -1) {
                     throw Error(`Invalid Operator in Where Clause : ${conditions[i]}`);
                 }
             }
@@ -63,7 +63,7 @@ class DatabaseOps {
         for(let i in mixed) {
             let temp = mixed[i].split(' ');
             if (temp[1] !== undefined) {
-                if ((DatabaseOps._getOrderClauses()).indexOf(temp[1].toLowerCase()) === -1) {
+                if ((DatabaseReadOps._getOrderClauses()).indexOf(temp[1].toLowerCase()) === -1) {
                     throw Error('Invalid Order Clause!');
                 }
             }
@@ -78,7 +78,7 @@ class DatabaseOps {
     }
 
     get(callback) {
-        const Query = new query(this.bindings, this.connection, callback);
+        const Query = new query(this.bindings, this.connection, 'R');
         Query.getResultData(callback);
     }
 

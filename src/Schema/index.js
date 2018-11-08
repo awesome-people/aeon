@@ -11,9 +11,17 @@
  * Created By: Nitish Kumar on 6/11/18 10:32 AM
  */
 
+const driver = require('./../../config').driver;
+const query = require('./../../lib/query');
+
 class Schema {
-    static create(tableName, blueprint) {
+    static create(tableName, blueprint, callback) {
+        blueprint['table'] = tableName ? tableName : false;
+        const Query = new query(blueprint, driver, 'C');
+        Query.getResultData(callback);
     }
+
+    static dropIfExists(tableName) {}
 }
 
 module.exports = Schema;
