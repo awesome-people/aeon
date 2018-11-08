@@ -34,6 +34,13 @@ class BluePrint {
         }
     }
 
+    static _generateCharacterTypeBlocks(type, length) {
+        return {
+            type : type,
+            length : length
+        };
+    }
+
     bit(name, length = 1, autoIncrement = false) {
         return this._addToStructure(name, {
             type : 'BIT',
@@ -45,7 +52,7 @@ class BluePrint {
         return this._addToStructure(name, BluePrint._generateIntTypeBlocks('TINYINT', length, autoIncrement, unsigned));
     }
 
-    boolean(name) {
+    bool(name) {
         return this._addToStructure(name, {
             type : 'BOOLEAN'
         });
@@ -117,7 +124,25 @@ class BluePrint {
         })
     }
 
-    // @TODO : Add String Data Types
+    char(name, length = undefined) {
+        return this._addToStructure(name, BluePrint._generateCharacterTypeBlocks('CHAR', typeof length === "undefined" ? this.defaultStringLength : length));
+    }
+
+    string(name, length = undefined) {
+        return this._addToStructure(name, BluePrint._generateCharacterTypeBlocks('STRING', typeof length === "undefined" ? this.defaultStringLength : length));
+    }
+
+    text(name) {
+        return this._addToStructure(name, BluePrint._generateCharacterTypeBlocks('TEXT', false));
+    }
+
+    mediumText(name) {
+        return this._addToStructure(name, BluePrint._generateCharacterTypeBlocks('MEDIUMTEXT', false));
+    }
+
+    longText(name) {
+        return this._addToStructure(name, BluePrint._generateCharacterTypeBlocks('LONGTEXT', false));
+    }
 
     _addToStructure(columnName, options = undefined) {
         this.structure[columnName] = options;

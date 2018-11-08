@@ -11,6 +11,9 @@
  * Created By: Nitish Kumar on 6/11/18 10:32 AM
  */
 
-class Schema {}
+class Schema {
+    static create(tableName, blueprint) {
+    }
+}
 
 module.exports = Schema;
